@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Clock</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta http-equiv="refresh" content="30"> -->
+</head>
+
+<body>
+  <div id="clock"></div>
+  <div id="date"></div>
+
+
+  <style>
+    body {
+      color: rgb(211, 211, 211);
+      background-color: black;
+      text-align: center;
+    }
+    #clock{
+      font-size: 40vw;
+      line-height: .9;
+    }
+    #date{
+      font-size: 5vw;
+      line-height: .9;
+    }
+  </style>
+
+  <script>
+    function setTime() {
+      clock.innerHTML = new Date().toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", am: false }).toString().split(' ')[0];
+      date.innerHTML = new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+    }
+    setInterval(setTime, 1000);
+  </script>
+</body>
+
+</html>
